@@ -1,0 +1,48 @@
+{
+  "name": "dsh-esp32-robot",
+  "version": "1.0.0",
+  "description": "doom_robot_mark_1：ESP32 语音小机器人的大脑——表情、心情、语音、联网、记忆，全部在 DeepSeek Harness 里配置",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "slots"
+      ],
+      "external": [
+        "react"
+      ]
+    }
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md"
+  ],
+  "keywords": [
+    "deepseek-harness",
+    "dsh-plugin",
+    "esp32",
+    "robot",
+    "voice-assistant"
+  ],
+  "engines": {
+    "node": ">=22.13.0"
+  }
+}

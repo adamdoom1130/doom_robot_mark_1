@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "ESP32 Robot",
+    "description": "The brain for a small ESP32 voice robot: listens, speaks, sees, and only emits restricted motion commands."
+  }
+}

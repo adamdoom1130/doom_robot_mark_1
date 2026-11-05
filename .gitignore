@@ -1,0 +1,13 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 依赖 / 构建
+node_modules/
+*.log
+
+# 本地调试产物
+.tmp/
+frames/
+tmp/
