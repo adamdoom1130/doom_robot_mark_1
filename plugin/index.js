@@ -748,7 +748,7 @@ export function apply(ctx, config) {
       const m = mood.snapshot()
       return {
       ok: true,
-      version: '1.0.0',
+      version: VERSION,
       config: publicConfig(),
       runtime: {
         enabled: cfg.enabled,
