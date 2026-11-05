@@ -4,7 +4,11 @@
 
 - Windows 10 / 11
 - 可用的 **DeepSeek Harness 桌面版**（已经能正常打开、能对话）
-- 一个放插件的地方（建议 `C:\Aurabot\plugins\doom_robot_mark_1`，**别放临时目录**）
+- 一个放插件的地方（建议 `%USERPROFILE%\dsh-plugins\doom_robot_mark_1`，**别放临时目录**）
+
+> 为什么单开一个 `dsh-plugins`：DSH 装插件是**按路径链接**的，源目录一旦改名或删掉，
+> 插件下次启动就失效。所以它得放在一个**你自己的、不会被别的软件清理**的地方——
+> 别放进 `C:\Aurabot` 这类应用目录，也别放进 `.dsh`（那是 DSH 自己的数据目录）。
 
 ## 1. 放好文件
 

@@ -4,24 +4,28 @@
 
 - macOS 12 及以上（Apple Silicon 或 Intel 都行）
 - 可用的 **DeepSeek Harness 桌面版**
-- 一个放插件的地方（建议 `~/Aurabot/plugins/doom_robot_mark_1`，**别放临时目录**）
+- 一个放插件的地方（建议 `~/dsh-plugins/doom_robot_mark_1`，**别放临时目录**）
+
+> 为什么单开一个 `~/dsh-plugins/`：DSH 装插件是**按路径链接**的，源目录一旦改名或删掉，
+> 插件下次启动就失效。所以它得放在一个**你自己的、不会被别的软件清理**的地方——
+> 别放进 AuraBot 之类的应用目录，也别放进 `~/.dsh`（那是 DSH 自己的数据目录）。
 
 ## 1. 放好文件
 
 把仓库里的 `plugin/` 整个目录复制到你选的位置：
 
 ```bash
-mkdir -p ~/Aurabot/plugins
-cp -R doom_robot_mark_1/plugin ~/Aurabot/plugins/
+mkdir -p ~/dsh-plugins/doom_robot_mark_1
+cp -R doom_robot_mark_1/plugin ~/dsh-plugins/doom_robot_mark_1/
 ```
 
-复制完这个目录里应该有 `package.json`、`cordis.patch.yml`、`index.js`、`client.js`、`lib/`。
-DSH 安装的是**这个 `plugin` 目录**，不是它的上一层。
+复制完 `~/dsh-plugins/doom_robot_mark_1/plugin/` 里应该有 `package.json`、`cordis.patch.yml`、
+`index.js`、`client.js`、`lib/`。DSH 安装的是**这个 `plugin` 目录**，不是它的上一层。
 
 ## 2. 安装
 
 1. 打开 DSH → 左侧栏 **插件**
-2. **从本地目录安装** → 选到 `~/Aurabot/plugins/plugin`
+2. **从本地目录安装** → 选到 `~/dsh-plugins/doom_robot_mark_1/plugin`
 3. 安装完成会提示需要重启 → **重启 DSH**
 
 ## 3. 第一次打开
