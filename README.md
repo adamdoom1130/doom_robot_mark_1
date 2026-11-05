@@ -58,6 +58,7 @@ plugin/               ← 要装的就是这个目录（一个完整的 DSH bund
   lib/sim.js          无硬件联调用的模拟器页面
   cordis.patch.yml    挂载声明 + 机器人专用 agent preset
 docs/                 工作流程、通信协议、固件与硬件、插件用法、安装说明
+firmware/             ESP32 固件（PlatformIO）：录放音 + 画脸 + 轮询心情
 ```
 
 ## 设计上的三个决定
@@ -90,8 +91,13 @@ GET  /robot/sim             电脑麦克风/喇叭模拟器
 
 ## 硬件
 
-引脚、I2S 参数、OLED 接线、供电都在 [`docs/03-固件与硬件.md`](docs/03-固件与硬件.md)。
+引脚、I2S 参数、OLED 接线、供电都在 [`docs/03-固件与硬件.md`](docs/03-固件与硬件.md)，
+可烧的代码在 [`firmware/`](firmware/)。
+
 核心约束：摄像头吃掉 12 根脚，N16R8 的 GPIO33~37 被 PSRAM 占用，真正自由的只有 11 个。
+
+> ⚠️ 固件**没有在真实硬件上验证过**。按 `firmware/README.md` 里的「上板顺序」一步步来，
+> 别一次全接上——先单测麦克风，再单测功放，最后才跑整条链路。
 
 ## 授权
 

@@ -1,7 +1,7 @@
 {
   "name": "dsh-esp32-robot",
-  "version": "1.0.0",
-  "description": "doom_robot_mark_1：ESP32 语音小机器人的大脑——表情、心情、语音、联网、记忆，全部在 DeepSeek Harness 里配置",
+  "version": "1.1.0",
+  "description": "doom_robot_mark_1锛欵SP32 璇煶灏忔満鍣ㄤ汉鐨勫ぇ鑴戔€斺€旇〃鎯呫€佸績鎯呫€佽闊炽€佽仈缃戙€佽蹇嗭紝鍏ㄩ儴鍦?DeepSeek Harness 閲岄厤缃?,
   "license": "MIT",
   "private": true,
   "type": "module",

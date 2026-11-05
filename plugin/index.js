@@ -20,7 +20,7 @@ import { simPage } from './lib/sim.js'
 const PREFIX = '/robot'
 const SOURCE_KIND = 'esp32-robot'
 const PRESET = 'esp32-robot'
-const VERSION = '1.0.0'
+const VERSION = '1.1.0'
 const TOOL_BUS_KEY = '__dsh_esp32_robot_bus__'
 
 export const name = 'esp32-robot'
@@ -691,6 +691,9 @@ export function apply(ctx, config) {
       try { first = await synthesize(sentences[0], cfg.voice, log) } catch (error) { ttsError = error.message }
     }
     try {
+      // 裸流：不套 chunked 编码。ESP32 那边只要读到连接关闭就是一段完整的 PCM，
+      // 不用自己解 chunk 头，代码少一半、也不会因为分包卡住。
+      res.useChunkedEncodingByDefault = false
       res.writeHead(200, {
         'content-type': 'application/vnd.robot.pcm',
         'cache-control': 'no-store',
